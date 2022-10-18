@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find the pattern (1) | Ant-Throw-Pology</title>
+    <style>
+      body {
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="Back" name="bk" onclick="window.history.back();" /> <input type="button" id="step" value="Step" onclick="f();"> <!--<input type="button" id="reset" value="Reset" onclick="n=1;document.getElementById('content').innerHTML=`&nbsp; &nbsp; &nbsp;1 <em>(1)</em>`">-->
+    <h3 id="content">&nbsp; &nbsp;1: &nbsp;1 <em>(1)</em></h3>
+    <script>
+      var n = [7], ic = 1;
+      document.getElementById("content").innerHTML = `&nbsp; &nbsp;1: &nbsp;${n.join(", ")} <em>(${n.length})</em>`;
+      function f() {
+        var i = 0, c = 0, t = n[0], r = [];
+        ic++;
+        while (true) {
+          if (n[i] !== t) {
+            // window.alert(`${c}, ${t}`);
+            r.push(c);
+            r.push(t);
+            c = 0;
+            t = n[i];
+          } else {
+            c++;
+            i++;
+            if (i == n.length + 1) break;
+          }
+        }
+        n = r;
+        var w = n.join(", ");
+        document.getElementById("content").innerHTML += `<br />&nbsp; &nbsp;${ic}: &nbsp;${w} <em>(${n.length})</em>`;
+      }
+    </script>
+  </body>
+</html>

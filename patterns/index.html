@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guess the Pattern | Ant-Throw-Pology</title>
+  </head>
+  <body>
+    <input type="button" value="Back" name="bk" onclick="window.history.back();" />
+    <label for="bk">Guess the Patterns</label>
+    <ul id="content"></ul>
+    <p><em>more coming soon, probably</em></p>
+    <script>
+      const ct = 1;
+      for (var i = 0; i < ct; i++) {
+        document.getElementById("content").innerHTML += `<li><a href="p/pattern${i+1}.html">pattern ${i+1}</a></li>`;
+      }
+    </script>
+  </body>
+</html>

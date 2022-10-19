@@ -9,7 +9,8 @@
     </style>
   </head>
   <body>
-    <input type="button" value="Back" name="bk" onclick="window.history.back();" /> <input type="button" id="step" value="Step" onclick="f();"> <input type="button" id="reset" value="Reset" onclick="n=[1];ic=1;document.getElementById('content').innerHTML=`&nbsp; &nbsp;1: &nbsp;1 <em>(1)</em>`"> <p><strong>NOTE:</strong> Press Space to step, Backspace to reset</p>
+    <input type="button" value="Back" name="bk" onclick="window.history.back();" /> <input type="button" id="step" value="Step" onclick="f();"> <input type="button" id="reset" value="Reset" onclick="n=[1];ic=1;document.getElementById('content').innerHTML=`&nbsp; &nbsp;1: &nbsp;1 <em>(1)</em>`;document.getElementById('reset').blur();">
+    <p><strong>NOTE:</strong> Press Space to step, Backspace to reset</p>
     <h3 id="content">&nbsp; &nbsp;1: &nbsp;1 <em>(1)</em></h3>
     <script>
       var n = [1], ic = 1;
@@ -33,6 +34,8 @@
         n = r;
         var w = n.join(", ");
         document.getElementById("content").innerHTML += `<br />&nbsp; &nbsp;${ic}: &nbsp;${w} <em>(${n.length})</em>`;
+        document.getElementById("step").blur();
+        document.getElementById("reset").blur();
       }
       window.onkeydown = function(e) {
         if (e.code == "Space") {

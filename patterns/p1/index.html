@@ -12,7 +12,7 @@
     <input type="button" value="Back" name="bk" onclick="window.history.back();" /> <input type="button" id="step" value="Step" onclick="f();"> <!--<input type="button" id="reset" value="Reset" onclick="n=1;document.getElementById('content').innerHTML=`&nbsp; &nbsp; &nbsp;1 <em>(1)</em>`">-->
     <h3 id="content">&nbsp; &nbsp;1: &nbsp;1 <em>(1)</em></h3>
     <script>
-      var n = [7], ic = 1;
+      var n = [1], ic = 1;
       document.getElementById("content").innerHTML = `&nbsp; &nbsp;1: &nbsp;${n.join(", ")} <em>(${n.length})</em>`;
       function f() {
         var i = 0, c = 0, t = n[0], r = [];

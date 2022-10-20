@@ -9,9 +9,20 @@
     <ul id="content"></ul>
     <p><em>more coming soon, probably</em></p>
     <script>
-      const ct = 1;
-      for (var i = 0; i < ct; i++) {
-        document.getElementById("content").innerHTML += `<li><a href="https://ant-throw-pology.github.io/patterns/p${i+1}/">pattern ${i+1}</a></li>`;
+      var i = 1;
+      while (true) {
+        var f = true;
+        fetch(`https://ant-throw-pology.github.io/patterns/p${i}/index.html`).then((a) => {
+          if (a.ok) {
+            document.getElementById("content").innerHTML += `<li><a href="p/pattern${i+1}.html">pattern ${i+1}</a></li>`;
+          } else {
+            f = false;
+            break;
+          }
+        }, (e) => {
+          console.error(e);
+        });
+        if (!f) break;
       }
     </script>
   </body>
